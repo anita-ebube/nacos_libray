@@ -1,0 +1,32 @@
+[
+ {
+    "href":"/",
+    "link":"Home"
+ },
+ {
+    "href":"/",
+    "link":"Courses",
+    "children":[
+        {
+            "href":"/",
+            "course":"100 Level"
+        },
+        {
+            "href":"/",
+            "course":"200 Level"
+        },
+        {
+            "href":"/",
+            "course":"300 Level"
+        },
+        {
+            "href":"/",
+            "course":"400 Level"
+        }
+    ]
+ },
+ {
+    "href":"/",
+    "link":"Search"
+ }
+]
