@@ -47,19 +47,13 @@ const Buttons = () => {
 
   return (
     <div >
-      {/* <p className="bg-orange-600">
-        {!firstSemester.active ? "Second Semester" : "First Semester"}
-      </p> */}
-
       <ToggleButton
-        className="bg-white p-5"
         onToggle={() => handleToggle("firstSemester")}
         active ={firstSemester.active}
       >
         1st Semester
       </ToggleButton>
       <ToggleButton
-        className="bg-white p-5 "
         onToggle={() => handleToggle("secondSemester")}
         active={secondSemester.active}
       >
