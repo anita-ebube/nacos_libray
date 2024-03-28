@@ -5,22 +5,6 @@ import axios from 'axios';
 const Navbar = () => {
   const [getUsers, setGetUsers] = useState([]);
 
-  useEffect(() => {
-    const fetchRegisteredUsers = async () => {
-      try {
-        const response = await axios.get(
-          "https://anita.metrochem.com.ng/public/api/registrations"
-        );
-        const data = response.data;
-        console.log(data);
-        setGetUsers(data.records);
-      } catch (error) {
-        console.error("display error", error);
-      }
-    };
-    fetchRegisteredUsers();
-  }, []);
-
   return (
     <>
       <nav className="fixed flex justify-between items-center gap-10 p-10 bg-white drop-shadow w-full">
@@ -37,11 +21,11 @@ const Navbar = () => {
         <div></div>
         <div className="lg:flex justify-between items-center gap-10 hidden">
           <img src="/icons/notification.svg" alt="" />
-          {/* {getUsers.map((user) => (
+          {getUsers.map((user) => (
             <p key={user.id}>
               {user.profile}
             </p>
-          ))} */}
+          ))}
           
           {/* <img src="/images/notes/profile.png" alt="" height={1 / 2} />/ */}
           {getUsers.map((user) => (
