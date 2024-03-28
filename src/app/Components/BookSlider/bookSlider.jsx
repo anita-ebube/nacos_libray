@@ -23,6 +23,9 @@ const bookslider = ({ courses }) => {
 
   // Settings for react-slick carousel
   const settings = {
+    autoplay:true,
+    speed: 2000,
+    autoplaySpeed: 2000,
     dots: true,
     infinite: true,
     speed: 500,

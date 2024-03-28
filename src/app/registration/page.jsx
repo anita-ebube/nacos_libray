@@ -21,7 +21,6 @@ const Registration = () => {
   const [showPassword, setShowPassword] = useState(false);
   const [showConfirmPassword, setShowConfirmPassword] = useState(false);
 
-
   const togglePasswordVisibility = () => {
     setShowPassword((prevShowPassword) => !prevShowPassword);
   };
@@ -40,7 +39,6 @@ const Registration = () => {
   const validatePassword = (password) => {
     return password.length >= 8;
   };
-
 
   const submitForm = async (e) => {
     e.preventDefault();
@@ -61,15 +59,20 @@ const Registration = () => {
     }
     formData.append("image", postUsers.profile);
 
-
     try {
       const res = await axios.post(
-        "https://anita.metrochem.com.ng/public/api/auth/register",
-        formData
+        "https://cors-anywhere.herokuapp.com/https://anita.metrochem.com.ng/public/api/auth/register",
+        formData,
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+        }
       );
       const data = res.data;
       console.log(data);
-      window.location.href = '/login';
+      window.location.href = "/login";
 
       setPostUsers({
         full_name: "",
@@ -82,7 +85,7 @@ const Registration = () => {
       });
     } catch (error) {
       console.error("NOTICE!!", error);
-      setError("The username is already taken")
+      setError("The username is already taken");
     }
   };
 
@@ -93,10 +96,6 @@ const Registration = () => {
       [id]: value,
     }));
   };
-
-  
-
-  
 
   return (
     <>
@@ -144,7 +143,6 @@ const Registration = () => {
                 onChange={(e) => handleData(e)}
                 className="border border-[#737373] w-full px-4 py-4 rounded-lg my-2 text-[13px] "
               />
-              
 
               <label htmlFor="" className="block text-[1.5rem] mt-10">
                 Email
@@ -156,8 +154,13 @@ const Registration = () => {
                 onChange={(e) => handleData(e)}
                 className="border border-[#737373] w-full px-4 py-4 rounded-lg my-2 text-[13px] "
               />
-              {emailValidationError && <p className="text-red-500">{emailValidationError}</p>}
-              <label htmlFor="upload-file" className="block text-[1.5rem] mt-10">
+              {emailValidationError && (
+                <p className="text-red-500">{emailValidationError}</p>
+              )}
+              <label
+                htmlFor="upload-file"
+                className="block text-[1.5rem] mt-10"
+              >
                 Select Image File:
               </label>
               <input
@@ -181,7 +184,9 @@ const Registration = () => {
                   value={postUsers.password}
                   className="border border-[#737373] w-full px-4 py-4 rounded-lg my-2 text-[13px] "
                 />
-                {passwordValidationError && <p className="text-red-500">{passwordValidationError}</p>}
+                {passwordValidationError && (
+                  <p className="text-red-500">{passwordValidationError}</p>
+                )}
                 <div className="absolute top-[38px] right-5">
                   {showPassword ? (
                     <BsEye onClick={togglePasswordVisibility} size={15} />

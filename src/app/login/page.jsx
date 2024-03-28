@@ -5,11 +5,12 @@ import Footer from "../Components/Footer/footer";
 import axios from "axios";
 import { useState } from "react";
 import { BsEye, BsEyeSlash } from "react-icons/bs";
-import cors from 'cors';
+import cors from "cors";
 
 const Login = () => {
   const router = useRouter();
-  const url = "http://anita.metrochem.com.ng/public/api/auth/login";
+  const url =
+    "https://cors-anywhere.herokuapp.com/http://anita.metrochem.com.ng/public/api/auth/login";
   const [credentials, setCredentials] = useState({
     username: "",
     password: "",
@@ -30,7 +31,13 @@ const Login = () => {
   function handleFormSubmit(e) {
     e.preventDefault();
     axios
-      .post(url, credentials)
+      .post(url, credentials, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          // Add any other headers as needed
+        },
+      })
       .then((response) => {
         console.log(response);
         sessionStorage.setItem("auth", response.data.message);

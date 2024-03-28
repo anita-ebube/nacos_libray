@@ -1,5 +1,6 @@
 import Link from "next/link"
 import Image from "next/image";
+
 const Hero = () => {
   return (
     <>
@@ -19,7 +20,6 @@ const Hero = () => {
           <div className="gap-6 py-5 lg:text-start text-center">
             <Link href="/registration">
               <button
-                href="/registration"
                 className="bg-[#518310] text-white px-[4rem] py-5 lg:text-[2rem] rounded"
               >
                 Get Started 
