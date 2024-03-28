@@ -1,164 +1,125 @@
 "use client";
-import React, { Component } from "react";
-import Slider from "react-slick";
+import React, { useRef, useState } from "react";
+// Import Swiper React components
+import { Swiper, SwiperSlide } from "swiper/react";
+import "swiper/css";
+import "swiper/css/scrollbar";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
+import { Keyboard, Scrollbar, Navigation, Pagination } from "swiper/modules";
 
-function StudentReviews() {
-  const settings = {
-    className: "left",
-    centerMode: true,
-    infinite: true,
-    centerPadding: "60px",
-    slidesToShow: 3,
-    speed: 500,
-    autoplay:true
-  };
+export default function App() {
   return (
-    <div className="slider-container">
-      <Slider {...settings}>
-        <div>
-          <div className="bg-black w-full h-[20vh]">
-            <h3>1</h3>
+    <>
+      <h1 className="text-[#518310] text-center text-5xl font-semibold pb-[8rem]">How it Works</h1>
+      <Swiper
+      style={{
+        "--swiper-navigation-color": "#518310",
+        "--swiper-navigation-size": "25px",
+      }}
+        slidesPerView={1}
+        centeredSlides={false}
+        grabCursor={true}
+        keyboard={{
+          enabled: true,
+        }}
+        breakpoints={{
+          769: {
+            slidesPerView: 2,
+            slidesPerGroup: 2,
+          },
+        }}
+        navigation={true}
+        pagination={{
+          clickable: true,
+        }}
+        modules={[Keyboard, Scrollbar, Navigation]}
+        className="mySwiper "
+      >
+        <SwiperSlide>
+          <div className="text-left px-[4rem]">
+            <div className="px-12">
+              <h1 className="text-[#518310] text-4xl font-semibold py-4">
+                Register/Log In
+              </h1>
+              <p className="text-2xl">
+                Click Get Started is other register or log in{" "}
+              </p>
+              <p className="text-2xl">If you have an account</p>
+            </div>
+            <img
+              src="images/carousel/register.png"
+              alt="Register"
+              width={500}
+              height={500}
+              className="py-7"
+            />
           </div>
-        </div>
-        <div>
-          <div className="bg-orange-400 w-full h-[20vh]">
-            <h3>2</h3>
+        </SwiperSlide>
+        <SwiperSlide>
+          <img
+            src="images/carousel/01.png"
+            alt="Step 1"
+            className=" m-auto pt-[12rem]"
+          />
+        </SwiperSlide>
+        <SwiperSlide>
+          <div className="text-left px-[4rem]">
+            <div className="px-12">
+              <h1 className="text-[#518310] text-4xl font-semibold py-4">
+                Accessing Your Dashboard
+              </h1>
+              <p className="text-2xl">
+                Find the material you need by searching for it{" "}
+              </p>
+              <p className="text-2xl">under courses and by level</p>
+            </div>
+            <img
+              src="images/carousel/dashboard.png"
+              alt="Dashboard"
+              width={500}
+              height={500}
+              className="py-7"
+            />
           </div>
-        </div>
-        <div>
-          <div className="bg-teal-400 w-full h-[20vh]">
-            <h3>3</h3>
+        </SwiperSlide>
+        <SwiperSlide>
+          <img
+            src="images/carousel/02.png"
+            alt="Step 2"
+            className=" m-auto pt-[12rem]"
+          />
+        </SwiperSlide>
+        <SwiperSlide>
+          <div className="text-left px-[4rem]">
+            <div className="px-12">
+              <h1 className="text-[#518310] text-4xl font-semibold py-4">
+                Downloading A Material
+              </h1>
+              <p className="text-2xl">
+                Click on the download button at the buttom{" "}
+              </p>
+              <p className="text-2xl">
+                right of the material you wish to download
+              </p>
+            </div>
+            <img
+              src="images/carousel/download.png"
+              alt="Download"
+              width={500}
+              height={500}
+              className="py-7"
+            />
           </div>
-        </div>
-        <div>
-        <div className="bg-pink-400 w-full h-[20vh]">
-            <h3>4</h3>
-          </div>
-        </div>
-        <div>
-        <div className="bg-yellow-400 w-full h-[20vh]">
-            <h3>3</h3>
-          </div>
-        </div>
-        <div>
-        <div className="bg-indigo-400 w-full h-[20vh]">
-            <h3>3</h3>
-          </div>
-        </div>
-      </Slider>
-    </div>
+        </SwiperSlide>
+        <SwiperSlide>
+          <img
+            src="images/carousel/03.png"
+            alt="Step 3"
+            className=" m-auto pt-[12rem]"
+          />
+        </SwiperSlide>
+      </Swiper>
+    </>
   );
 }
-
-export default StudentReviews;
-// const StudentReviews = () => {
-//   return (
-//     <>
-//     <div className="heading text-center">
-//        <h1>Students Review</h1>
-//        <p>
-//        See what other students have to say about the computer science
-//        library
-//        </p>
-//        <button className="btn">View All</button>
-//      </div>
-//     <Carousel cols={2} rows={1} gap={10} loop>
-//       <Carousel.Item>
-//       <div className="bg-[#00000012] p-7 rounded-md">
-//         <div className="flex ">
-//           <img src="images/latest/prof.png" alt=""/>
-//           <p className="text-[1.5rem] pl-3">John Doe</p>
-//         </div>
-//         <p className=" text-[2rem] py-5">
-//           The library has been extremely helpful in my studies. Highly
-//           recommended!
-//         </p>
-//         <div className="flex">
-//           <div>
-//             <img src="images/reaction/thumbs.png" alt="" />
-//           </div>
-//           <div>
-//             <img src="images/reaction/fire.png" alt="" className="px-5" />
-//           </div>
-//           <div>
-//             <img src="images/reaction/star.png" alt="" />
-//           </div>
-//         </div>
-//       </div>
-//       </Carousel.Item>
-//       <Carousel.Item>
-//       <div className="bg-[#00000012] p-7 rounded-md">
-//         <div className="flex ">
-//           <img src="images/latest/prof.png" alt=""/>
-//           <p className="text-[1.5rem] pl-3">John Doe</p>
-//         </div>
-//         <p className=" text-[2rem] py-5">
-//           The library has been extremely helpful in my studies. Highly
-//           recommended!
-//         </p>
-//         <div className="flex">
-//           <div>
-//             <img src="images/reaction/thumbs.png" alt="" />
-//           </div>
-//           <div>
-//             <img src="images/reaction/fire.png" alt="" className="px-5" />
-//           </div>
-//           <div>
-//             <img src="images/reaction/star.png" alt="" />
-//           </div>
-//         </div>
-//       </div>
-//       </Carousel.Item>
-//       <Carousel.Item>
-//       <div className="bg-[#00000012] p-7 rounded-md">
-//         <div className="flex ">
-//           <img src="images/latest/prof.png" alt=""/>
-//           <p className="text-[1.5rem] pl-3">John Doe</p>
-//         </div>
-//         <p className=" text-[2rem] py-5">
-//           The library has been extremely helpful in my studies. Highly
-//           recommended!
-//         </p>
-//         <div className="flex">
-//           <div>
-//             <img src="images/reaction/thumbs.png" alt="" />
-//           </div>
-//           <div>
-//             <img src="images/reaction/fire.png" alt="" className="px-5" />
-//           </div>
-//           <div>
-//             <img src="images/reaction/star.png" alt="" />
-//           </div>
-//         </div>
-//       </div>
-//       </Carousel.Item>
-//       <Carousel.Item>
-//       <div className="bg-[#00000012] p-7 rounded-md">
-//         <div className="flex ">
-//           <img src="images/latest/prof.png" alt=""/>
-//           <p className="text-[1.5rem] pl-3">John Doe</p>
-//         </div>
-//         <p className=" text-[2rem] py-5">
-//           The library has been extremely helpful in my studies. Highly
-//           recommended!
-//         </p>
-//         <div className="flex">
-//           <div>
-//             <img src="images/reaction/thumbs.png" alt="" />
-//           </div>
-//           <div>
-//             <img src="images/reaction/fire.png" alt="" className="px-5" />
-//           </div>
-//           <div>
-//             <img src="images/reaction/star.png" alt="" />
-//           </div>
-//         </div>
-//       </div>
-//       </Carousel.Item>
-//       {/* ... */}
-//     </Carousel>
-//     </>
-//   )
-// }
-
-// export default StudentReviews;

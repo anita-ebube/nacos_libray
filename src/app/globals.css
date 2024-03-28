@@ -2,6 +2,7 @@
 @import "slick-carousel/slick/slick.css";
 @import "slick-carousel/slick/slick-theme.css";
 
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -16,8 +17,6 @@ html {
 @media(max-width:768px){
   html{
     font-size: calc(100vw / 390 * 10);
-  }
-  .heading h1{
   }
 }
 @media (prefers-color-scheme: dark) {
@@ -101,4 +100,10 @@ html {
 .icon:hover{
   color: #518310;
   filter: brightness(50%);
-} 
+}
+
+th,td,tr{
+  /* padding:px; */
+  border-left: blue;
+  border-style: dotted;
+}

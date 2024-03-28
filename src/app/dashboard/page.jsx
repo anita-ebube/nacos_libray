@@ -1,6 +1,7 @@
 import Buttons from "./Components/Buttons/Buttons";
 import CoreCourses from "./Components/Courses/coreCourses";
 import GeneralCoures from "./Components/Courses/generalCourses";
+import Footer from "../Components/Footer/footer"
 const dashboard = () => {
   return (
     <div className="bg-[#f3fff1]">
@@ -9,7 +10,11 @@ const dashboard = () => {
         <CoreCourses />
         <GeneralCoures />
       </div>
+      <div className="absolute w-full pt-[10rem]">
+      <Footer />
+      </div>
     </div>
+    
   );
 };
 

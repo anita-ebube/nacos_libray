@@ -5,6 +5,7 @@ import navLinksData from "./menuData";
 import NavigationDesktop from "./nav";
 
 const Header = () => {
+  
   const [isOpen, setIsOpen] = useState(false);
 
   const toggleMenu = () => {
@@ -40,10 +41,10 @@ const Header = () => {
                 <div className="dropdown">
                   <li className="dropdown-btn">Courses</li>
                   <div className="dropdown-content">
-                    <Link href="/loginPage"><li>100 Level</li></Link>
-                    <Link href="/loginPage"><li>200 Level</li></Link>
-                    <Link href="/loginPage"><li>300 Level</li></Link>
-                    <Link href="/loginPage"><li>400 Level</li></Link>
+                    <Link href="/login"><li>100 Level</li></Link>
+                    <Link href="/login"><li>200 Level</li></Link>
+                    <Link href="/login"><li>300 Level</li></Link>
+                    <Link href="/login"><li>400 Level</li></Link>
                     
                   </div>
                 </div>
